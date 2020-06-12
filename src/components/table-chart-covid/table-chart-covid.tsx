@@ -3,7 +3,6 @@ import { ascend, descend, evolve, prop, sort, tap } from 'ramda'
 import { find, propEq, pick, pickBy, pipe as _, keys, values, take } from 'ramda'
 
 import { desc, nonZero } from '../../utils/utils'
-// import 'd3-stencil'
 
 @Component({
   tag: 'table-chart-covid',
@@ -30,16 +29,16 @@ export class TableChartCovid implements ComponentInterface {
     },
     Countries: [
       {
-        Country: "Afghanistan",
-        CountryCode: "AF",
-        Slug: "afghanistan",
+        Country: 'Afghanistan',
+        CountryCode: 'AF',
+        Slug: 'afghanistan',
         NewConfirmed: 683,
         TotalConfirmed: 22142,
         NewDeaths: 21,
         TotalDeaths: 405,
         NewRecovered: 362,
         TotalRecovered: 3013,
-        Date: "2020-06-11T18:00:02Z"
+        Date: '2020-06-11T18:00:02Z'
       }]
   }
 
@@ -59,15 +58,12 @@ export class TableChartCovid implements ComponentInterface {
 
   private pieChartData: any
 
-  // maybe scale linear() ?
-  // colors =
-
   componentWillLoad() {
     this.pieChartData = this.setChartData()
   }
 
   constructor() {
-    fetch("https://api.covid19api.com/summary", {
+    fetch('https://api.covid19api.com/summary', {
       method: 'GET',
     }).then(e => e.json())
       .then(evolve({
@@ -166,7 +162,7 @@ export class TableChartCovid implements ComponentInterface {
 
             <div class='double-column'>
               <div class='left-column'>
-                <div class="summary">
+                <div class='summary'>
                   <h1>COVID<sub>19</sub> Summary </h1>
                   <p> Over {/*this.totalConfirmed.toLocaleString()*/} cases confirmed.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -175,7 +171,7 @@ export class TableChartCovid implements ComponentInterface {
                   </p>
                 </div>
 
-                <table id="covid-table">
+                <table id='covid-table'>
                   <thead>
                   <tr>
                     <th
@@ -213,8 +209,8 @@ export class TableChartCovid implements ComponentInterface {
                       </tr>)}
                 </table>
 
-                <div class="center">
-                  <div class="pagination">
+                <div class='center'>
+                  <div class='pagination'>
                     <a onClick={() => this.previousPage()}>Previous Page</a>
                     <a onClick={() => this.nextPage()}>Next Page</a>
                   </div>
@@ -225,13 +221,13 @@ export class TableChartCovid implements ComponentInterface {
 
             <div class='column'>
               <div class='right-column'>
-                <div id="chart-area">
+                <div id='chart-area'>
                   <h1>{this.getTitleFor(this.country)}</h1>
                   <pie-chart graphData={this.pieChartData}>
-                    <tooltip-chart slot="tooltip"/>
+                    <tooltip-chart slot='tooltip'/>
                   </pie-chart>
                   <button
-                    class="button"
+                    class='button'
                     onClick={() => this.onClearSelectedCountry()}>
                     Clean Selected Country
                   </button>
@@ -241,13 +237,13 @@ export class TableChartCovid implements ComponentInterface {
           </div>
 
         </div>
-        <div class='row' id="footer">
-          <div class="card">
-            <div id="contact-us">
-              <span class="upper">Contact us: + 41 123 123 123</span>
+        <div class='row' id='footer'>
+          <div class='card'>
+            <div id='contact-us'>
+              <span class='upper'>Contact us: + 41 123 123 123</span>
             </div>
           </div>
-          <div class="copyright">
+          <div class='copyright'>
             <span>© COVID19 Summary 2020</span>
           </div>
         </div>
