@@ -22,6 +22,9 @@ Changing colors/theme can be done, example in `index.html`
 ![](https://github.com/syzer/d3-stenciljs-dashboard/blob/master/data/mobile-view.jpg?raw=true)
 
 
+Css variables such as font face or colors can be also or modified in the:
+`src/global/global.css` file.
+
 # Install
 ```bash
 npm install

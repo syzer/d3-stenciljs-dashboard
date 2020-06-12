@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'd3-component',
-  globalStyle: 'src/global/app.css',
+  globalStyle: 'src/global/global.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   outputTargets: [
