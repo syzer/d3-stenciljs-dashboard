@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Host, h, Prop, State } from '@stencil/co
 import { ascend, descend, evolve, prop, sort, tap } from 'ramda'
 import { find, propEq, pick, pickBy, pipe as _, keys, values } from 'ramda'
 
-import { nonZero } from '../../utils/utils'
+import { nonZero, renameLabels } from '../../utils/utils'
 
 @Component({
   tag: 'table-chart-covid',
@@ -115,11 +115,16 @@ export class TableChartCovid implements ComponentInterface {
       : country
   }
 
+  getImportantKeys() {
+    return ['TotalConfirmed', 'TotalDeaths', 'TotalRecovered']
+  }
+
   onClearSelectedCountry() {
     this.pieChartData = {
       ...this.pieChartData,
       labels: _(
         pick(this.getImportantKeys()),
+        renameLabels,
         keys
       )(this.covidData.Global),
       data: _(
@@ -128,10 +133,6 @@ export class TableChartCovid implements ComponentInterface {
       )(this.covidData.Global)
     }
     this.country = 'Global'
-  }
-
-  getImportantKeys() {
-    return ['TotalConfirmed', 'TotalDeaths', 'TotalRecovered']
   }
 
   setChartData() {
@@ -149,6 +150,7 @@ export class TableChartCovid implements ComponentInterface {
         this.getCountryPath(this.country),
         pick(this.getImportantKeys()),
         pickBy(nonZero),
+        renameLabels,
         keys,
       )(this.covidData),
       data: _(
