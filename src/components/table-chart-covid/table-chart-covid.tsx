@@ -236,7 +236,7 @@ export class TableChartCovid implements ComponentInterface {
                   <button
                     class='button'
                     onClick={() => this.onClearSelectedCountry()}>
-                    Clean Selected Country
+                    Clear Selected Country
                   </button>
                 </div>
               </div>

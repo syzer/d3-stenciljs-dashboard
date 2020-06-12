@@ -3,6 +3,7 @@
   --color-primary: #397e47;
   --color-secondary: #5aaf60;
   --color-accent: #4caf5042;
+  --color-accent-secondary: #f2f2f2;
 
   display: block;
   font-family: var(--font);
@@ -72,7 +73,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: var(--color-accent-secondary);
 }
 
 tr {
@@ -127,14 +128,14 @@ th {
 }
 
 #chart-area .button {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border: none;
   color: white;
   cursor: pointer;
   display: inline-block;
   font-family: var(--font);
   font-size: smaller;
-  margin: 40px 2px 4px;
+  margin: 40px 40px 4px;
   padding: 10px 25px;
   text-align: center;
   text-decoration: none;
