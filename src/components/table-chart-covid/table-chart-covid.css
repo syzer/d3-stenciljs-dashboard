@@ -3,6 +3,7 @@
   --font: "Trebuchet MS", Arial, Helvetica, sans-serif;
   --color-primary: #397e47;
   --color-secondary: #5aaf60;
+  --color-accent: #4caf5042;
   font-family: var(--font);
 }
 
@@ -52,7 +53,12 @@
   font-size: smaller;
 }
 
-/* table */
+#table-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 table {
   border-collapse: collapse;
   margin-left: 20px;
@@ -74,7 +80,7 @@ tr {
 }
 
 tr:hover {
-  background-color: #4caf5042;
+  background-color: var(--color-accent);
 }
 
 th {

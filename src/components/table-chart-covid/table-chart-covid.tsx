@@ -176,44 +176,45 @@ export class TableChartCovid implements ComponentInterface {
                     dolore magna aliqua. Commodo elit at imperdiet dui accumsan sit amet.
                   </p>
                 </div>
+                <div id='table-wrapper'>
+                  <table id='covid-table'>
+                    <thead>
+                    <tr>
+                      <th
+                        style={{ width: '30%' }}
+                        onClick={() =>
+                          this.onHeaderClick('Country')}>
+                        Country
+                      </th>
+                      <th
+                        onClick={() =>
+                          this.onHeaderClick('TotalConfirmed')}>
+                        Total Confirmed
+                      </th>
+                      <th
+                        onClick={() =>
+                          this.onHeaderClick('TotalDeaths')}>
+                        Total Deaths
+                      </th>
+                      <th onClick={() =>
+                        this.onHeaderClick('TotalRecovered')}>
+                        Total Recovered
+                      </th>
+                    </tr>
+                    </thead>
 
-                <table id='covid-table'>
-                  <thead>
-                  <tr>
-                    <th
-                      style={{ width: '30%' }}
-                      onClick={() =>
-                        this.onHeaderClick('Country')}>
-                      Country
-                    </th>
-                    <th
-                      onClick={() =>
-                        this.onHeaderClick('TotalConfirmed')}>
-                      Total Confirmed
-                    </th>
-                    <th
-                      onClick={() =>
-                        this.onHeaderClick('TotalDeaths')}>
-                      Total Deaths
-                    </th>
-                    <th onClick={() =>
-                      this.onHeaderClick('TotalRecovered')}>
-                      Total Recovered
-                    </th>
-                  </tr>
-                  </thead>
-
-                  {this.covidData.Countries
-                    .sort(this.getSortOrder()(prop(this.sortProp)))
-                    .slice((this.page - 1) * this.rowsPerPage, this.rowsPerPage * this.page + this.rowsPerPage)
-                    .map(row =>
-                      <tr onClick={(event: UIEvent) => this.onRowClick(event, row.Country)} id={row.Country}>
-                        <td>{row.Country}</td>
-                        <td>{row.TotalConfirmed.toLocaleString()}</td>
-                        <td>{row.TotalDeaths.toLocaleString()}</td>
-                        <td>{row.TotalRecovered.toLocaleString()}</td>
-                      </tr>)}
-                </table>
+                    {this.covidData.Countries
+                      .sort(this.getSortOrder()(prop(this.sortProp)))
+                      .slice((this.page - 1) * this.rowsPerPage, this.rowsPerPage * this.page + this.rowsPerPage)
+                      .map(row =>
+                        <tr onClick={(event: UIEvent) => this.onRowClick(event, row.Country)} id={row.Country}>
+                          <td>{row.Country}</td>
+                          <td>{row.TotalConfirmed.toLocaleString()}</td>
+                          <td>{row.TotalDeaths.toLocaleString()}</td>
+                          <td>{row.TotalRecovered.toLocaleString()}</td>
+                        </tr>)}
+                  </table>
+                </div>
 
                 <div class='center'>
                   <div class='pagination'>
