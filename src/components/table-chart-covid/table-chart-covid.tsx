@@ -1,8 +1,8 @@
 import { Component, ComponentInterface, Host, h, Prop, State } from '@stencil/core'
 import { ascend, descend, evolve, prop, sort, tap } from 'ramda'
-import { find, propEq, pick, pickBy, pipe as _, keys, values, take } from 'ramda'
+import { find, propEq, pick, pickBy, pipe as _, keys, values } from 'ramda'
 
-import { desc, nonZero } from '../../utils/utils'
+import { nonZero } from '../../utils/utils'
 
 @Component({
   tag: 'table-chart-covid',
@@ -47,7 +47,7 @@ export class TableChartCovid implements ComponentInterface {
 
   private totalPages: number
 
-  @Prop()
+  @State()
   country: string = 'Global'
 
   @State()
@@ -118,8 +118,14 @@ export class TableChartCovid implements ComponentInterface {
   onClearSelectedCountry() {
     this.pieChartData = {
       ...this.pieChartData,
-      labels: _(keys, sort(desc), take(3))(this.covidData.Global),
-      data: _(values, sort(desc), take(3))(this.covidData.Global)
+      labels: _(
+        pick(this.getImportantKeys()),
+        keys
+      )(this.covidData.Global),
+      data: _(
+        pick(this.getImportantKeys()),
+        values
+      )(this.covidData.Global)
     }
     this.country = 'Global'
   }

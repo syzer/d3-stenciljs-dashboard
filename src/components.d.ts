@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface TableChartCovid {
-        "country": string;
         "rowsPerPage": number;
         "theme": {
             chartColors: string[];
@@ -27,7 +26,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface TableChartCovid {
-        "country"?: string;
         "rowsPerPage"?: number;
         "theme"?: {
             chartColors: string[];
