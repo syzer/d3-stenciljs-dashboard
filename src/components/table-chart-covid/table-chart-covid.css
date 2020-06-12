@@ -72,16 +72,58 @@ table {
   }
 }
 
+.slidein-left {
+  animation-duration: .4s;
+  animation-name: slidein-left;
+  animation-fill-mode: forwards;
+  width: 0;
+  overflow: hidden;
+}
+@keyframes slidein-left {
+  from {
+    margin-right: 100%;
+    width: 0;
+  }
+  to {
+    width: auto;
+  }
+}
+
+.slidein-right {
+  animation-duration: .3s;
+  animation-name: slidein-right;
+  animation-fill-mode: forwards;
+  width: 0;
+  overflow: hidden;
+}
+@keyframes slidein-right {
+  from {
+    margin-left: 100%;
+    width: 0;
+  }
+
+  to {
+    width: auto;
+  }
+}
+
 @media only screen and (min-width: 800px) {
   table {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 30px!important;
+    margin-right: 30px!important;
   }
 }
 
 td, th {
   border: 1px solid #ddd;
   padding: 8px;
+}
+
+td {
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 tr:nth-child(even) {

@@ -177,7 +177,7 @@ export class TableChartCovid implements ComponentInterface {
                   </p>
                 </div>
                 <div id='table-wrapper'>
-                  <table id='covid-table'>
+                  <table id='covid-table' class="slidein-left">
                     <thead>
                     <tr>
                       <th
@@ -228,7 +228,7 @@ export class TableChartCovid implements ComponentInterface {
 
             <div class='column'>
               <div class='right-column'>
-                <div id='chart-area'>
+                <div id='chart-area' class="slidein-right">
                   <h1>{this.getTitleFor(this.country)}</h1>
                   <pie-chart graphData={this.pieChartData}>
                     <tooltip-chart slot='tooltip'/>
