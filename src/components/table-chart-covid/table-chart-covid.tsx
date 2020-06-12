@@ -69,7 +69,7 @@ export class TableChartCovid implements ComponentInterface {
       .then(evolve({
         Countries: sort(descend(prop(this.sortProp)))
       }))
-      .then(tap(console.log)) // TODO to global and props
+      .then(tap(console.log))
       .then(covidData => this.covidData = covidData)
       .then(() =>
         this.totalPages = Math.floor(this.covidData.Countries.length / this.page))
@@ -170,7 +170,7 @@ export class TableChartCovid implements ComponentInterface {
               <div class='left-column'>
                 <div class='summary'>
                   <h1>COVID<sub>19</sub> Summary </h1>
-                  <p> Over {/*this.totalConfirmed.toLocaleString()*/} cases confirmed.
+                  <p> Over {this.covidData.Global.TotalConfirmed.toLocaleString()} cases confirmed.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et
                     dolore magna aliqua. Commodo elit at imperdiet dui accumsan sit amet.
