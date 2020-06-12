@@ -137,7 +137,7 @@ th {
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
   #chart-area {
     padding: 70px 10px;
   }
