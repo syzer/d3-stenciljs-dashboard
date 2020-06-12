@@ -4,19 +4,19 @@
 
 This page was build as single web component using stencil/tsx compiler, 
 so it will work in any major framework or with no framework at all.
-Originally was composed of 4 smaller components assembled with <slot/>
+Originally was composed of 4 smaller components assembled with `<slot/>`
 
-Css is not using any framework,
+- Css is not using any framework,
 uses flexbox, text-transform and modern CSS4 techniques
 (with also some old ones(CSS1.0)) 
 It was not enough time to set media-queries and proper break-points
 
-Table support sorting appending and descending on any column
-Also support pagination
+Data Table support sorting appending and descending on any column.
+It also support pagination
 
 Data of external webservice is loaded using fetch API.
 
-Changing colors/theme can be done, example in index.html
+Changing colors/theme can be done, example in `index.html`
 
 # Install
 ```bash
