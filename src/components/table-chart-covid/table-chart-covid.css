@@ -62,9 +62,21 @@
 
 table {
   border-collapse: collapse;
-  margin-left: 20px;
-  margin-right: 20px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  table {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  table {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
 td, th {

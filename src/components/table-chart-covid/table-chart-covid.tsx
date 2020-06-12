@@ -181,7 +181,7 @@ export class TableChartCovid implements ComponentInterface {
                     <thead>
                     <tr>
                       <th
-                        style={{ width: '30%' }}
+                        style={{ width: '40%' }}
                         onClick={() =>
                           this.onHeaderClick('Country')}>
                         Country
