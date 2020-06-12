@@ -1,0 +1,161 @@
+:host {
+  display: block;
+  --font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  --color-primary: #397e47;
+  --color-secondary: #5aaf60;
+  font-family: var(--font);
+}
+
+.layout-wrapper {
+  margin-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  /*margin-top: 50px;*/
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.left-column {
+  height: 740px;
+}
+
+.right-column {
+  height: 740px;
+  background-color: rgba(30, 91, 28, 0.13);
+}
+
+.double-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1.5
+}
+
+.summary {
+  color: var(--color-primary);
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 20px;
+}
+
+.summary p {
+  font-size: smaller;
+}
+
+/* table */
+table {
+  border-collapse: collapse;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr {
+  height: 55px;
+}
+
+tr:hover {
+  background-color: #4caf5042;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.center {
+  margin: auto;
+  width: 50%; /* or could use flexbox*/
+  margin-top: 10px;
+}
+
+.pagination a {
+  padding: 10px;
+  color: var(--color-primary);
+  font-size: smaller;
+}
+
+
+#chart-area {
+  padding: 70px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#chart-area h1 {
+  color: var(--color-primary);
+  font-size: large;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#chart-area .button {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font);
+  font-size: smaller;
+  margin: 40px 2px 4px;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#chart-area text {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  fill: white !important;
+  font-family: var(--font);
+}
+
+#footer {
+  align-items: center;
+  background:  var(--color-primary) !important;
+  color: white;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+#footer .card {
+  margin-left: 50px;
+}
+
+#footer .copyright {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
