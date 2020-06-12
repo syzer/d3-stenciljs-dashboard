@@ -18,6 +18,10 @@ Data of external webservice is loaded using fetch API.
 
 Changing colors/theme can be done, example in `index.html`
 
+![](https://github.com/syzer/d3-stenciljs-dashboard/blob/master/data/desktop-view.jpg =250x250)
+![](https://github.com/syzer/d3-stenciljs-dashboard/blob/master/data/mobile-view.jpg =250x250)
+
+
 # Install
 ```bash
 npm install
