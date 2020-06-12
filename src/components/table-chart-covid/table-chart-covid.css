@@ -1,9 +1,10 @@
 :host {
-  display: block;
   --font: "Trebuchet MS", Arial, Helvetica, sans-serif;
   --color-primary: #397e47;
   --color-secondary: #5aaf60;
   --color-accent: #4caf5042;
+
+  display: block;
   font-family: var(--font);
 }
 
@@ -16,7 +17,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  /*margin-top: 50px;*/
 }
 
 .column {
@@ -27,11 +27,11 @@
 }
 
 .left-column {
-  height: 740px;
+  height: 760px;
 }
 
 .right-column {
-  height: 740px;
+  height: 760px;
   background-color: rgba(30, 91, 28, 0.13);
 }
 
@@ -92,9 +92,14 @@ th {
 }
 
 .center {
-  margin: auto;
-  width: 50%; /* or could use flexbox*/
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .pagination a {

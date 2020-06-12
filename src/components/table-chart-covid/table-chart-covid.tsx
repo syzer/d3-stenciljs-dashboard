@@ -242,7 +242,6 @@ export class TableChartCovid implements ComponentInterface {
               </div>
             </div>
           </div>
-
         </div>
         <div class='row' id='footer'>
           <div class='card'>
