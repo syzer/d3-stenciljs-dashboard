@@ -54,7 +54,10 @@ export class TableChartCovid implements ComponentInterface {
   sortProp: string = 'TotalConfirmed'
 
   @State()
-  sortOrder = 1
+  sortOrder: number = 1
+
+  @State()
+  searchQuery: string = ''
 
   private pieChartData: any
 
@@ -162,6 +165,17 @@ export class TableChartCovid implements ComponentInterface {
     }
   }
 
+  onSearchQuery(event: Event) {
+    // @ts-ignore
+    this.searchQuery = event.target.value
+  }
+
+  displayedCountries() {
+    return this.covidData.Countries
+      .filter(({ Country }) =>
+        Country.toLowerCase().includes(this.searchQuery.toLowerCase()))
+  }
+
   render() {
     return (
       <Host>
@@ -170,17 +184,31 @@ export class TableChartCovid implements ComponentInterface {
 
             <div class='double-column'>
               <div class='left-column'>
-                <div class='summary'>
-                  <h1>COVID<sub>19</sub> Summary </h1>
-                  <p> Over {this.covidData.Global.TotalConfirmed.toLocaleString()} cases confirmed.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Commodo elit at imperdiet dui accumsan sit amet.
-                  </p>
+                <div class="center">
+                  <div class='summary'>
+                    <h1>COVID<sub>19</sub> Summary </h1>
+                    <p> Over {this.covidData.Global.TotalConfirmed.toLocaleString()} cases confirmed.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore
+                      et
+                      dolore magna aliqua. Commodo elit at imperdiet dui accumsan sit amet.
+                    </p>
+                  </div>
                 </div>
-                <div id='table-wrapper'>
+                <div class="center">
+
+                </div>
+                <div class="center">
                   <table id='covid-table' class="slidein-left">
                     <thead>
+                    <tr>
+                      <th id="search">
+                        Search:
+                        <input
+                          value={this.searchQuery}
+                          onInput={event => this.onSearchQuery(event)}/>
+                      </th>
+                    </tr>
                     <tr>
                       <th
                         style={{ width: '40%' }}
@@ -191,7 +219,7 @@ export class TableChartCovid implements ComponentInterface {
                       <th
                         onClick={() =>
                           this.onHeaderClick('TotalConfirmed')}>
-                        Total Confirmed
+                        Active Cases
                       </th>
                       <th
                         onClick={() =>
@@ -205,7 +233,7 @@ export class TableChartCovid implements ComponentInterface {
                     </tr>
                     </thead>
 
-                    {this.covidData.Countries
+                    {this.displayedCountries()
                       .sort(this.getSortOrder()(prop(this.sortProp)))
                       .slice((this.page - 1) * this.rowsPerPage, this.rowsPerPage * this.page + this.rowsPerPage)
                       .map(row =>

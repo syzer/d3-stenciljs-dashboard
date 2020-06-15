@@ -48,16 +48,11 @@
   margin-left: 20px;
   margin-right: 20px;
   padding-bottom: 20px;
+  /*margin-left: 10%;*/
 }
 
 .summary p {
   font-size: smaller;
-}
-
-#table-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 table {
@@ -116,6 +111,17 @@ table {
 td, th {
   border: 1px solid #ddd;
   padding: 8px;
+}
+
+th#search {
+  border: 0;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  padding-bottom: 0;
+}
+
+th#search > input {
+  margin-left: 5px;
 }
 
 td {
